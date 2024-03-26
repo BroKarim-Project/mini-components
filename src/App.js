@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import DetectCaps from './components/detectCaps';
+import GenerateColor from './components/GenerateColor';
+import Carousel from './components/Carousel';
+import BluerMenu from './components/BluerMenu';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <DetectCaps/>
+    // <GenerateColor />
+    // <Carousel />
+    <BluerMenu />
   );
 }
-
-export default App;
