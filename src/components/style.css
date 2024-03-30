@@ -29,7 +29,7 @@
   flex: 1 0 100%;
 }
 
-ul:hover li{
+/* ul:hover li{
   opacity: .2;
   filter: blur(2px);
 }
@@ -37,4 +37,4 @@ ul:hover li{
 ul li:hover{
   opacity: 1;
   filter:blur(0px);
-}
+} */

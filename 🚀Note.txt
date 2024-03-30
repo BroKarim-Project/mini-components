@@ -1,0 +1,2 @@
+====================================== Grag anda Drop ================================
+- onDragEnd prop that will allow us to fire a function after dragging has complete, dalam kasus ini kita akn fire
