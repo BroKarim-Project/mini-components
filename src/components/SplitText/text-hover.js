@@ -1,6 +1,5 @@
-// pertama kita buat <template/>
+
 const template = document.createElement('template');
-// dengan innerHTML kita atur gaya elemen
 template.innerHTML = `
   <style>
     :root {
@@ -55,27 +54,17 @@ template.innerHTML = `
   </div>
 `;
 
-// setelah kita membuat kontainer yang akana mengatur layoutr konten kita
-// selanjutnya kita membuat custom class bernama TextHover
-// sederhanaya kita seperti membuat blueprint dari suatu projek bernama text-hover
-//
 export default class TextHover extends HTMLElement {
-  //karena kita ingin selalu menyertakan TextHover dengan <template/>
-  //maka kita akan melakukan inisialisasai di awal, sehingga setiap kali text-hover dipanggil, <template/> akan selalu ikut serta
   constructor() {
     super();
-    //kita copy element "template" menggunakan cloneNode
     const templateCopy = template.content.cloneNode(true);
     this.attachShadow({ mode: 'open' }).appendChild(templateCopy);
   }
 
-  //kita definisikan atribut2 dari class ini
   static get observedAttributes() {
     return ['split-by', 'letter-animation', 'word-animation'];
   }
 
-  //untuk setiap karakter text kita taru elemen span
-  //misal, jika ada teks 'halo', maka akan dibuat empat elemen <span>, satu untuk setiap karakter
   span(text) {
     const spanElement = document.createElement('span');
     spanElement.textContent = text;
@@ -83,15 +72,10 @@ export default class TextHover extends HTMLElement {
     return spanElement;
   }
 
-  //kita pecah text yang kita buat menjadi array per-karakter atau per-huru
-  // ini adalah metode yang ngatur animasi split by letter
   splitByLetter(text) {
     return [...text].map(this.span);
   }
-  
-  //kita pecah text yang kita buat menjadi array per-kata
-  // ini adalah metode yang ngatur animasi split by word
-  splitByWord(text) {
+    splitByWord(text) {
     return text.split(' ').map(this.span);
   }
 
@@ -133,6 +117,4 @@ export default class TextHover extends HTMLElement {
     }
   }
 }
-
-//kita buat custom components, nanti akan digunakna dengan nama <text-hover/>
 customElements.define('text-hover', TextHover);
