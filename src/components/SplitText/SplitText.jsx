@@ -18,10 +18,10 @@ const SplitText = () => {
             Type 1
           </button>
           <button className={activeButton === 'word' ? 'p-2 bg-blue-400 rounded-md text-white ' : 'p-2 bg-black rounded-md text-white '} onClick={() => handleSplitChange('word')}>
-            Type 1
+            Type 2
           </button>
           <button className={activeButton === 'rolling' ? 'p-2 bg-blue-400 rounded-md text-white ' : 'p-2 bg-black rounded-md text-white '} onClick={() => handleSplitChange('rolling')}>
-            Type 1
+            Type 3
           </button>
         </div>
         <div>
