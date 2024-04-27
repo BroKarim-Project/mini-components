@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 
 export default function LoginTwo() {
-  const [inputValue, setInputValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [isEmailHovered, setIsEmailHovered] = useState(false);
+  const [isPasswordHovered, setIsPasswordHovered] = useState(false);
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const handleEmailInputChange = (event) => {
+    setEmailValue(event.target.value);
   };
+
+  const handlePasswordInputChange = (event) => {
+    setPasswordValue(event.target.value);
+  };
+
   return (
     <>
       <div className="login">
@@ -21,24 +29,45 @@ export default function LoginTwo() {
               <i className="ri-user-3-line login__icon"></i>
 
               <div className="login__box-input">
-                <input type="email" required className="login__input" id="login-email" placeholder=" " value={inputValue} onChange={handleInputChange} />
+                <input
+                  type="email"
+                  required
+                  className="login__input"
+                  id="login-email"
+                  placeholder=" "
+                  value={emailValue}
+                  onChange={handleEmailInputChange}
+                  onMouseEnter={() => setIsEmailHovered(true)}
+                  onMouseLeave={() => setIsEmailHovered(false)}
+                />
                 <label for="login-email" className="login__label">
                   Email
                 </label>
               </div>
-              <span className={inputValue.trim() !== '' ? 'underline animated' : 'underline'}></span>
+              <span className={isEmailHovered && emailValue.trim() !== '' ? 'underline animated' : 'underline'}></span>
             </div>
 
             <div className="login__box">
               <i className="ri-lock-2-line login__icon"></i>
 
               <div className="login__box-input">
-                <input type="password" required className="login__input login__input relative " style={{ paddingBlock: '0.8rem' }} id="login-pass" placeholder=" " />
+                <input
+                  type="password"
+                  required
+                  className="login__input  "
+                  id="login-pass"
+                  placeholder=" "
+                  value={passwordValue}
+                  onChange={handlePasswordInputChange}
+                  onMouseEnter={() => setIsPasswordHovered(true)}
+                  onMouseLeave={() => setIsPasswordHovered(false)}
+                />
                 <label for="login-pass" className="login__label">
                   Password
                 </label>
                 <i className="ri-eye-off-line login__eye" id="login-eye"></i>
               </div>
+              <span className={isPasswordHovered  && passwordValue.trim() !== '' ? 'underline animated' : 'underline'}></span>
             </div>
           </div>
 
@@ -306,5 +335,3 @@ export default function LoginTwo() {
     </>
   );
 }
-
-
