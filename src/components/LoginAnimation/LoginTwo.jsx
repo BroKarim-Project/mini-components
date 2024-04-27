@@ -17,14 +17,12 @@ export default function LoginTwo() {
   return (
     <>
       <div className="login">
-        {/* <img src="https://images.unsplash.com/photo-1713687070911-8c89cece491d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="login image" className="login__img" /> */}
-
+        
         <form action="" className="login__form">
           <h1 className="login__title">Login-2</h1>
 
           {/* field box */}
           <div className="login__content">
-            {/* bagian login__box yg bakal kita ubah  */}
             <div className="login__box ">
               <i className="ri-user-3-line login__icon"></i>
 
@@ -67,7 +65,7 @@ export default function LoginTwo() {
                 </label>
                 <i className="ri-eye-off-line login__eye" id="login-eye"></i>
               </div>
-              <span className={isPasswordHovered  && passwordValue.trim() !== '' ? 'underline animated' : 'underline'}></span>
+              <span className={isPasswordHovered && passwordValue.trim() !== '' ? 'underline animated' : 'underline'}></span>
             </div>
           </div>
 
